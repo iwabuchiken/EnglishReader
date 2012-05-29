@@ -1,0 +1,76 @@
+[20120529_173711 Set up]
+rails new EnglishReader
+
+cd EnglishReader
+
+copy C:\WORKS\WORKSPACES_APTANA\ChineseReader\.project .
+
+### EDIT .project#name	###
+
+### IMPORT TO APTANA	###
+
+copy C:\WORKS\WORKSPACES_APTANA\ChineseReader\win_command_history.txt .
+
+copy C:\WORKS\WORKSPACES_APTANA\ChineseReader\Gemfile .
+
+bundle install
+
+rails s --port 3001
+
+[Git 20120529_174048]
+### CREATE REPO AT GitHub	###
+
+================================================
+
+g p origin master
+
+[heroku]
+*gem install heroku --no-ri --no-rdoc
+*heroku keys:add
+*heroku create --stack cedar
+*g p heroku master
+*heroku rename cosmos-chinese-reader
+*heroku open
+
+[rails]
+*rails generate scaffold WordSet ch:string pin:string jp:string
+*bundle exec rake db:migrate
+*rails generate scaffold Text body:string url:string genre:string
+*bundle exec rake db:migrate
+
+heroku run rake db:migrate
+
+[20120528_125705]
+rails generate migration add_title_to_items title:string
+
+rails generate migration rename_column :texts :body :text
+
+rails destroy migration rename_column
+
+bundle exec rake db:migrate
+
+rails generate migration add_text_id_to_word_sets text_id:integer
+
+rails generate controller GetWords main show
+
+rails generate migration change_string_to_text
+
+bundle exec rake db:migrate
+
+rails generate migration text_change_text_length
+
+heroku run rake db:migrate
+
+# rails destroy migration 20120528133656
+# rails destroy migration 20120528133656_text_change_text_length
+rails destroy migration text_change_text_length
+
+rails generate migration text_change_text_length
+
+bundle exec rake db:migrate
+
+[20120529_151904]
+rails generate controller Dictionary main show
+
+
+============EOF============
