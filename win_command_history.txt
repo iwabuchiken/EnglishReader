@@ -1,4 +1,4 @@
-[20120529_173711 Set up]
+[Set up 20120529_173711]----------------------------
 rails new EnglishReader
 
 cd EnglishReader
@@ -20,23 +20,47 @@ rails s --port 3001
 [Git 20120529_174048]
 ### CREATE REPO AT GitHub	###
 
-================================================
+git init
+
+git add .
+
+git commit -a
+
+git remote add origin git@github.com:iwabuchiken/EnglishReader.git
 
 g p origin master
 
-[heroku]
-*gem install heroku --no-ri --no-rdoc
-*heroku keys:add
-*heroku create --stack cedar
-*g p heroku master
-*heroku rename cosmos-chinese-reader
-*heroku open
+### BROWSE GitHub	###
+
+[heroku 20120529_174501]
+gem install heroku --no-ri --no-rdoc
+
+heroku keys:add
+
+heroku create --stack cedar
+
+g p heroku master
+
+heroku rename cosmos-english-reader
+
+git remote rm heroku
+
+git remote add heroku git@heroku.com:cosmos-english-reader.git
+
+heroku open
+
+[/Set up 20120529_173711]----------------------------
+
+[Create: Models 20120529_175608]
+rails generate scaffold WordSet en:string jp:string text_id:integer
+
+rails generate scaffold Text title:string text:text url:string 
+
+bundle exec rake db:migrate
+
+================================================
 
 [rails]
-*rails generate scaffold WordSet ch:string pin:string jp:string
-*bundle exec rake db:migrate
-*rails generate scaffold Text body:string url:string genre:string
-*bundle exec rake db:migrate
 
 heroku run rake db:migrate
 
