@@ -58,6 +58,16 @@ rails generate scaffold Text title:string text:text url:string
 
 bundle exec rake db:migrate
 
+[gitk]
+commit
+
+push: origin
+
+push: heroku
+
+[console]
+heroku run rake db:migrate
+
 ================================================
 
 [rails]
