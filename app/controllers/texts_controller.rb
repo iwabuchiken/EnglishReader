@@ -74,6 +74,15 @@ class TextsController < ApplicationController
   def destroy
     @text = Text.find(params[:id])
     @text.destroy
+    
+    # Related word sets
+    @word_sets_special = WordSet.where("text_id = ?", params[:id])
+    
+    @word_sets_special.each do |word_set|
+      # @text.update_attributes(params[:text])
+      # word_set.text_id = 0
+      word_set.update_attribute(:text_id, 0)
+    end
 
     respond_to do |format|
       format.html { redirect_to texts_url }
