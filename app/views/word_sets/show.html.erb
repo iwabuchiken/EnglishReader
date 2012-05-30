@@ -17,4 +17,6 @@
 
 
 <%= link_to 'Edit', edit_word_set_path(@word_set) %> |
+<td><%= link_to 'Destroy', @word_set, confirm: 'Are you sure?', method: :delete %></td> |
+
 <%= link_to 'Back', word_sets_path %>
