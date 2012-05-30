@@ -68,7 +68,10 @@ push: heroku
 [console]
 heroku run rake db:migrate
 
-================================================
+[20120530_173650]
+rails generate controller GetWords main show
+
+/================================================
 
 [rails]
 

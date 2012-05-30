@@ -24,7 +24,16 @@ class WordSetsController < ApplicationController
   # GET /word_sets/new
   # GET /word_sets/new.json
   def new
-    @word_set = WordSet.new
+    # @word_set = WordSet.new
+    if params['text_id'] != nil
+      # @word_set = WordSet.new("", "", "", params['text_id'])
+      # @word_set = WordSet.new(params['text_id'])
+      @word_set = WordSet.new
+      @word_set.text_id = params['text_id'].to_i
+    else
+      @word_set = WordSet.new
+    end
+
 
     respond_to do |format|
       format.html # new.html.erb

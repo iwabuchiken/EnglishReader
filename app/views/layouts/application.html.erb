@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>EnglishReader</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -9,6 +10,7 @@
 	
 <%= link_to 'Word sets', :controller => "word_sets", :action => "index" %>
 <%= link_to 'Texts', :controller => "texts", :action => "index" %>
+<%= link_to 'Get words', :controller => "get_words", :action => "main" %>
 
 <hr/>
 

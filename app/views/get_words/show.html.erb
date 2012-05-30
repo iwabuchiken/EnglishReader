@@ -1,0 +1,59 @@
+<% if @word_set_special != nil \
+		and  @word_set_special.first() != nil
+
+%>
+	<table>
+		<tr>
+			<td>Text id</td>
+			<td><%= @word_set_special.first().text_id %></td>
+		</tr>
+		<tr>
+			<td>Title</td>
+			<td><%= @word_set_special.first().text.title %></td>
+		</tr>
+	</table>
+	
+	<br/>
+	
+	<table>
+	  <tr>
+	    <th>English</th>
+	    <th>Japanese</th>
+	    <th></th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+	
+	
+	<% @word_set_special.each do |word_set| %>
+	  <tr>
+	    <td><%= word_set.en %></td>
+	    <td><%= word_set.jp %></td>
+	    <td><%= link_to 'Show', word_set %></td>
+	    <td><%= link_to 'Edit', edit_word_set_path(word_set) %></td>
+	    <td><%= link_to 'Destroy', word_set, confirm: 'Are you sure?', method: :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+<% else %>
+	<table>
+		<tr>
+			<td>Text id</td>
+			<td><%= @params %></td>
+		</tr>
+		<tr>
+			<td>Title</td>
+			<td><%= @texts %></td>
+		</tr>
+	</table>
+	<br/>
+	No word set found for this text.
+<% end %>
+
+<br/>
+<br/>
+<!-- <%= link_to "Back", :controller => "get_words", :action => "main" %> -->
+<!-- source for "Back" => http://stackoverflow.com/questions/620962/back-browser-action-in-ruby-on-rails -->
+<%= link_to_function "Back", "history.back()" %>
+

@@ -1,4 +1,8 @@
 EnglishReader::Application.routes.draw do
+  get "get_words/main"
+
+  get "get_words/show"
+
   root :to => "texts#index"
 
   resources :texts

@@ -2,22 +2,35 @@
 
 <table>
   <tr>
+  	<th>Id</th>
     <th>Title</th>
     <th>Text</th>
-    <th>Url</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @texts.each do |text| %>
   <tr>
-    <td><%= text.title %></td>
-    <td><%= text.text %></td>
-    <td><%= text.url %></td>
+  	<td><%= text.id %></td>
+  	
+    <% if text.title.length == 0 %>
+  		<td><%= link_to "NO TITLE", text.url, {:target => "_blank"} %></td>
+	<% else %>
+		<td><%= link_to text.title, text.url, {:target => "_blank"} %></td>
+	<% end %>
+	
+    <% if text.text.length == 0 %>
+  		<td><%= "NO TEXT" %></td>
+	<% else %>
+		<td><%= text.text[0..10] + "..." %></td>
+	<% end %>
+    
     <td><%= link_to 'Show', text %></td>
-    <td><%= link_to 'Edit', edit_text_path(text) %></td>
-    <td><%= link_to 'Destroy', text, confirm: 'Are you sure?', method: :delete %></td>
+    
+    <td><%= link_to 'Add new words', 
+    				:controller => "word_sets", :action => "new", 
+    				:text_id => text.id %></td>
+
   </tr>
 <% end %>
 </table>

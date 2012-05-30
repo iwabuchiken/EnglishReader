@@ -1,0 +1,4 @@
+<%= form_tag({:controller => 'get_words', :action => 'show'}, {:method => :get}) do %>
+	<%= text_field_tag :text_id, '', {:size => 5}%>
+	<%= submit_tag 'Show' %>
+<% end %>
