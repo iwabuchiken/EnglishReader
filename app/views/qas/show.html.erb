@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <b>Link:</b>
+  <%= @qa.link %>
+</p>
+
+<p>
   <b>Content:</b>
   <%= @qa.content %>
 </p>
@@ -17,4 +22,5 @@
 
 
 <%= link_to 'Edit', edit_qa_path(@qa) %> |
+<%= link_to 'Destroy', @qa, confirm: 'Are you sure?', method: :delete %> | 
 <%= link_to 'Back', qas_path %>
