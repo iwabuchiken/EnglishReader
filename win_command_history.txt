@@ -112,4 +112,14 @@ rails generate controller Dictionary main show
 []
 rails generate scaffold QA title:string content:text genre:string
 
+heroku run rake db:migrate
+
+rails generate migration add_link_to_items link:string
+
+rails destroy migration add_link_to_items
+
+rails generate migration add_link_to_qas link:string
+
+bundle exec rake db:migrate
+
 ============EOF============

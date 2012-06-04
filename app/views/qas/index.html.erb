@@ -5,6 +5,7 @@
     <th>Title</th>
     <th>Content</th>
     <th>Genre</th>
+    <th>Link</th>
     
     <% if @qas.first() != nil%>
 	    <th></th>
@@ -19,6 +20,7 @@
     <td><%= qa.title %></td>
     <td><%= qa.content %></td>
     <td><%= qa.genre %></td>
+    <td><%= qa.link %></td>
     <td><%= link_to 'Show', qa %></td>
     <td><%= link_to 'Edit', edit_qa_path(qa) %></td>
     <td><%= link_to 'Destroy', qa, confirm: 'Are you sure?', method: :delete %></td>
