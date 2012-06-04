@@ -1,4 +1,6 @@
 EnglishReader::Application.routes.draw do
+  resources :qas
+
   get "get_words/main"
 
   get "get_words/show"

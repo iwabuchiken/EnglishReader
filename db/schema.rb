@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529085958) do
+ActiveRecord::Schema.define(:version => 20120604063105) do
+
+  create_table "qas", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "genre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "texts", :force => true do |t|
     t.string   "title"

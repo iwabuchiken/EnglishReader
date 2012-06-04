@@ -1,0 +1,2 @@
+module QAsHelper
+end
