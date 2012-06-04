@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b>Title:</b><br/>
   <%= @text.title %>
 </p>
 
 <p>
-  <b>Text:</b>
+  <b>Text:</b><br/>
   <%= @text.text %>
 </p>
 
 <p>
-  <b>Url:</b>
-  <%= @text.url %>
+  <b>Url:</b><br/>
+  <%= link_to @text.url, @text.url %>
 </p>
 
 

@@ -5,13 +5,19 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
 </head>
 <body>
 	
 <%= link_to 'Word sets', :controller => "word_sets", :action => "index" %>
 <%= link_to 'Texts', :controller => "texts", :action => "index" %>
 <%= link_to 'Get words', :controller => "get_words", :action => "main" %>
-
+ | 
+<%= link_to 'Open dictionary(English-English)', "http://dictionary.cambridge.org/" %>
+ 
+<%= link_to 'Open dictionary(English-Japanese)', "http://dictionary.goo.ne.jp/ej/" %>
 <hr/>
 
 <%= yield %>

@@ -1,32 +1,33 @@
 <h1>Listing texts</h1>
 
 <table>
+	<tr><%= link_to 'New Text', new_text_path %></tr>
   <tr>
   	<th>Id</th>
     <th>Title</th>
     <th>Text</th>
-    <th></th>
+    <th>URL</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @texts.each do |text| %>
   <tr>
-  	<td><%= text.id %></td>
+  	<td class="id"><%= text.id %></td>
   	
     <% if text.title.length == 0 %>
-  		<td><%= link_to "NO TITLE", text.url, {:target => "_blank"} %></td>
+  		<td class="col_title"><%= link_to "NO TITLE", text.url, {:target => "_blank"} %></td>
 	<% else %>
-		<td><%= link_to text.title, text.url, {:target => "_blank"} %></td>
+		<td class="col_title"><%= link_to text.title, text %></td>
 	<% end %>
 	
     <% if text.text.length == 0 %>
   		<td><%= "NO TEXT" %></td>
 	<% else %>
-		<td><%= text.text[0..10] + "..." %></td>
+		<td class="col_text"><%= text.text[0..50] + "..." %></td>
 	<% end %>
     
-    <td><%= link_to 'Show', text %></td>
+    <td class="id"><%= link_to "Go", text.url, {:target => "_blank"} %></td>
     
     <td><%= link_to 'Add new words', 
     				:controller => "word_sets", :action => "new", 
@@ -37,7 +38,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Text', new_text_path %>
