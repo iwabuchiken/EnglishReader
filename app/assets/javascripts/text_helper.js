@@ -20,6 +20,8 @@ $(document).ready(function(){
 					
 					// Show message
 					$('div#translation_area').html(message + "<br/>");
+					// $('div#translation_area').append(message + "<br/>");
+					// alert(message);
 					
 				}
 		);
