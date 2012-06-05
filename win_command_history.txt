@@ -146,4 +146,7 @@ bundle exec rake db:migrate
 rails generate scaffold QAItem title:string link:string content:text genre:string
 
 bundle exec rake db:migrate
+
+heroku run rake db:migrate
+
 ============EOF============

@@ -22,4 +22,5 @@
 
 
 <%= link_to 'Edit', edit_qa_item_path(@qa_item) %> |
+<td><%= link_to 'Destroy', @qa_item, confirm: 'Are you sure?', method: :delete %></td> | 
 <%= link_to 'Back', qa_items_path %>

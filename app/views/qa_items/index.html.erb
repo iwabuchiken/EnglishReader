@@ -6,20 +6,15 @@
     <th>Link</th>
     <th>Content</th>
     <th>Genre</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
 
 <% @qa_items.each do |qa_item| %>
   <tr>
-    <td><%= qa_item.title %></td>
-    <td><%= qa_item.link %></td>
+    <td><%= link_to qa_item.title, qa_item %></td>
+    <td class="id"><%= link_to 'Go', qa_item.link, :target => "_blank" %></td>
     <td><%= qa_item.content %></td>
     <td><%= qa_item.genre %></td>
-    <td><%= link_to 'Show', qa_item %></td>
-    <td><%= link_to 'Edit', edit_qa_item_path(qa_item) %></td>
-    <td><%= link_to 'Destroy', qa_item, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
