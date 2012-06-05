@@ -122,4 +122,16 @@ rails generate migration add_link_to_qas link:string
 
 bundle exec rake db:migrate
 
+heroku run rake db:migrate
+
+heroku run rake db:rollback STEP=2
+
+heroku run rake db:migrate
+
+heroku run rake db:rollback STEP=1
+
+heroku run rake db:migrate
+
+rails generate scaffold Dummy title:string content:text genre:string
+
 ============EOF============
