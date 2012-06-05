@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605084106) do
+ActiveRecord::Schema.define(:version => 20120605085950) do
 
   create_table "dummies", :force => true do |t|
     t.string   "title"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20120605084106) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "qas", :force => true do |t|
+  create_table "qas_deprecated", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.string   "genre"

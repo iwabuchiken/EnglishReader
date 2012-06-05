@@ -134,4 +134,12 @@ heroku run rake db:migrate
 
 rails generate scaffold Dummy title:string content:text genre:string
 
+bundle exec rake db:migrate
+
+heroku run rake db:migrate
+
+rails generate migration change_table_qas_qas_deprecated
+
+bundle exec rake db:migrate
+
 ============EOF============
