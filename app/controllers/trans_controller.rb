@@ -8,7 +8,9 @@ class TransController < ApplicationController
     end
     
     # Resource => http://stackoverflow.com/questions/10681816/render-json-instead-of-html-as-default
-    render json: WordSet.where("id = ?", word_id).first().jp
+    render json: WordSet.where("id = ?", word_id).first()
+    # render html: WordSet.where("id = ?", word_id).first().jp
+    # render json: WordSet.where("id = ?", word_id).first()
     
     # # render "TransController"
     # # @target_word_set = WordSet.where("text_id = ?", 4).first()
