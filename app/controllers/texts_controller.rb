@@ -106,4 +106,10 @@ class TextsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def get_translation
+    print "get_translation"
+  end
+  
+
 end

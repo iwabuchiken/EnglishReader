@@ -1,4 +1,8 @@
 EnglishReader::Application.routes.draw do
+  get "trans/main"
+
+  get "trans/show"
+
   resources :qa_items
 
   resources :dummies
