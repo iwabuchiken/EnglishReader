@@ -14,7 +14,24 @@ class TextsController < ApplicationController
   # GET /texts/1.json
   def show
     @text = Text.find(params[:id])
-
+    
+    # Get text from Text
+    text_text = @text.text
+    
+    # Get the word sets
+    word_sets_special = WordSet.where('text_id = ?', @text.id)
+    
+    # Initialize modified text
+    @modified_text = text_text
+    
+    # Build text
+    word_sets_special.each do |word_set|
+      @modified_text = @modified_text.sub( \
+                  word_set.en, \
+                  "<span class='translate' id='word_" + word_set.id.to_s + "'>" + \
+                  word_set.en + "</span>")
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @text }
