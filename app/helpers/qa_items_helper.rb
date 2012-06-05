@@ -1,0 +1,2 @@
+module QaItemsHelper
+end

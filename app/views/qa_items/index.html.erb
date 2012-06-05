@@ -1,0 +1,29 @@
+<h1>Listing qa_items</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Link</th>
+    <th>Content</th>
+    <th>Genre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @qa_items.each do |qa_item| %>
+  <tr>
+    <td><%= qa_item.title %></td>
+    <td><%= qa_item.link %></td>
+    <td><%= qa_item.content %></td>
+    <td><%= qa_item.genre %></td>
+    <td><%= link_to 'Show', qa_item %></td>
+    <td><%= link_to 'Edit', edit_qa_item_path(qa_item) %></td>
+    <td><%= link_to 'Destroy', qa_item, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Qa item', new_qa_item_path %>

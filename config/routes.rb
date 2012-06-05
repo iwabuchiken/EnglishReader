@@ -1,4 +1,6 @@
 EnglishReader::Application.routes.draw do
+  resources :qa_items
+
   resources :dummies
 
   resources :qas

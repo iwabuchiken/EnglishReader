@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @qa_item.title %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @qa_item.link %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @qa_item.content %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @qa_item.genre %>
+</p>
+
+
+<%= link_to 'Edit', edit_qa_item_path(@qa_item) %> |
+<%= link_to 'Back', qa_items_path %>
