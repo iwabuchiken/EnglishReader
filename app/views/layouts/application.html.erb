@@ -10,19 +10,57 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
+  
 </head>
 <body>
-	
-<%= link_to 'Word sets', :controller => "word_sets", :action => "index" %>
-<%= link_to 'Texts', :controller => "texts", :action => "index" %>
-<%= link_to 'Get words', :controller => "get_words", :action => "main" %>
-<%= link_to 'QAs', :controller => "qa_items", :action => "index" %>
- | 
-<%= link_to 'Open dictionary(English-English)', "http://dictionary.cambridge.org/" %>
- 
-<%= link_to 'Open dictionary(English-Japanese)', "http://dictionary.goo.ne.jp/ej/" %>
-<hr/>
-
+	<div>
+		<ul id="main_menu">
+			<li>
+				<a href="#"
+					onmouseover="mopen('m1')"
+					onmouseout="mclosetime()"
+				>
+					Main Menu
+				</a>
+				<div id="m1"
+					onmouseover="mcancelclosetime()"
+					onmouseout="mclosetime()">
+					<a href="#">
+						<%= link_to 'Texts', :controller => "texts", :action => "index" %>
+					</a>
+					<a href="#">
+						<%= link_to 'Word sets', :controller => "word_sets", :action => "index" %>
+					</a>
+					<a href="#">
+						<%= link_to 'Get words', :controller => "get_words", :action => "main" %>
+					</a>
+					<a href="#">
+						<%= link_to 'QAs', :controller => "qa_items", :action => "index" %>
+					</a>
+				</div>
+			</li>
+			<li>
+				<a href="#"
+					onmouseover="mopen('m2')"
+					onmouseout="mclosetime()"
+				>
+					Dictionaries
+				</a>
+				<div id="m2"
+					onmouseover="mcancelclosetime()"
+					onmouseout="mclosetime()">
+					<a href="#">
+						<%= link_to 'English-English', "http://dictionary.cambridge.org/", :target => "_blank" %>
+					</a>
+					<a href="#">
+						<%= link_to 'English-Japanese', "http://dictionary.goo.ne.jp/ej/", :target => "_blank" %>
+					</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<br/>
+	<br/>
 <%= yield %>
 
 </body>

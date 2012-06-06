@@ -7,3 +7,27 @@ table, th, td {
   // border: 1px #ff0000 solid;
   border: 1px #6495ED solid;
 }
+
+#main_menu {
+  // background: yellow;
+  
+}
+
+#main_menu li {
+  list-style: none;
+  float: left;
+}
+
+#main_menu li a {
+  display: block;
+  margin: 0 10px 0 0;
+}
+
+#main_menu li a:hover {
+  background: yellow;
+  color: black;
+}
+
+#main_menu div {
+  visibility: hidden;
+}
